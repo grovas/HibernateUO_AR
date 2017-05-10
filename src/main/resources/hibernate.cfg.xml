@@ -24,7 +24,7 @@
     <property name="hbm2ddl.auto">update</property>
 
     <!-- Names the annotated entity class -->
-        <mapping class="main.java.com.sdajava.hibernateUO.model.User"/>
-        <mapping class="main.java.com.sdajava.hibernateUO.model.Order"/>
+    <mapping class="main.java.com.sdajava.hibernateUO.model.User"/>
+    <mapping class="main.java.com.sdajava.hibernateUO.model.Order"/>
     </session-factory>
 </hibernate-configuration>

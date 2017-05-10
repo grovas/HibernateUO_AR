@@ -10,10 +10,20 @@ public class Order {
     @GeneratedValue(strategy= GenerationType.TABLE)
     private int orderId;
 
-    private int userIdFk;
-    private List<Product> productList;
+    //private int userIdFk;
+    //private List<Product> productList;
 
-    @OneToMany
+    @ManyToOne
+    @JoinColumn(name="user_id",
+                referencedColumnName = "user_id",
+                nullable=false)
+    private User user_id;
+
+    public Order(int orderId, int userIdFk, User user) {
+        this.orderId = orderId;
+       // this.userIdFk = userIdFk;
+        this.user_id = user;
+    }
 
     public int getOrderId() {
         return orderId;
@@ -23,19 +33,19 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public int getUserIdFk() {
+   /* public int getUserIdFk() {
         return userIdFk;
     }
 
     public void setUserIdFk(int userIdFk) {
         this.userIdFk = userIdFk;
     }
+*/
+    //public List<Product> getProductList() {
+        //return productList;
+    //}
 
-    public List<Product> getProductList() {
-        return productList;
-    }
-
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
+   // public void setProductList(List<Product> productList) {
+    //    this.productList = productList;
+   // }
 }

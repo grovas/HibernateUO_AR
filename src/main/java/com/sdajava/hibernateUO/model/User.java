@@ -2,20 +2,22 @@ package main.java.com.sdajava.hibernateUO.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
+@Table(name="users")
 public class User {
     //id, imie, nazwisko, adres)
     @Id
-    @GeneratedValue(strategy= GenerationType.TABLE)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "user_id")
     private int user_id;
     private String firstName;
     private String lastName;
     private String address;
 
-    @OneToMany(mappedBy ="user_id")
-    private List<Order> order;
+    @OneToMany(mappedBy ="user")
+    private Set<Order> order;
 
     public User(){}
 

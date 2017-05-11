@@ -4,25 +4,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="orders")
 public class Order {
     //id, id_uzytkownika, lista artykułów, data zamówienia
     @Id
-    @GeneratedValue(strategy= GenerationType.TABLE)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int orderId;
 
     //private int userIdFk;
     //private List<Product> productList;
 
     @ManyToOne
-    @JoinColumn(name="user_id",
-                referencedColumnName = "user_id",
-                nullable=false)
-    private User user_id;
+    @JoinColumn(name="user_id")
+    private User user;
 
     public Order(int orderId, int userIdFk, User user) {
         this.orderId = orderId;
        // this.userIdFk = userIdFk;
-        this.user_id = user;
+        //this.user_id = user;
     }
 
     public int getOrderId() {

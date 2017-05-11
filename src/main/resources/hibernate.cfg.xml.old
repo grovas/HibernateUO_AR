@@ -26,5 +26,6 @@
     <!-- Names the annotated entity class -->
     <mapping class="main.java.com.sdajava.hibernateUO.model.User"/>
     <mapping class="main.java.com.sdajava.hibernateUO.model.Order"/>
+    <mapping class="main.java.com.sdajava.hibernateUO.model.Product"/>
     </session-factory>
 </hibernate-configuration>

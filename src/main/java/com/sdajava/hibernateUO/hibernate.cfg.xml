@@ -18,7 +18,7 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"></property>
     <!-- Echo all executed SQL to stdout -->
-    <property name="show_sql">false</property>
+    <property name="show_sql">true</property>
 
     <!-- Drop and re-create the database schema on startup -->
     <property name="hbm2ddl.auto">update</property>
@@ -26,5 +26,7 @@
     <!-- Names the annotated entity class -->
         <mapping class="main.java.com.sdajava.hibernateUO.model.User"/>
         <mapping class="main.java.com.sdajava.hibernateUO.model.Order"/>
+        <mapping class="main.java.com.sdajava.hibernateUO.model.Product"/>
+        <mapping class="main.java.com.sdajava.hibernateUO.model.Address"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,6 +1,7 @@
 package main.java.com.sdajava.hibernateUO.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -14,14 +15,18 @@ public class User {
     private int user_id;
     private String firstName;
     private String lastName;
-    private String address;
 
     @OneToMany(mappedBy ="user")
     private Set<Order> order;
 
+    @ManyToMany
+    @JoinColumn(name = "user")
+    private List<Address> address = new ArrayList<Address>();
+
     public User(){}
 
-    public User(int userId, String firstName, String lastName, String address) {
+    public User(int userId, String firstName,
+                String lastName, List<Address> address) {
         this.user_id = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -52,11 +57,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
+    public List<Address> getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(List<Address> address) {
         this.address = address;
     }
 }
